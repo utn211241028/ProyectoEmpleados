@@ -45,6 +45,11 @@ public class DataBaseWebSecurity extends WebSecurityConfigurerAdapter{
 		"/signup",
 		"/search",
 		"/vacante/detalle/**").permitAll()
+		
+		// Asignar permisos a URLs por ROLES
+				.antMatchers("/vacante/**").hasAnyAuthority("ADMINISTRADOR")
+				.antMatchers("/categoria/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
+				.antMatchers("/usuarios/**").hasAnyAuthority("SUPERVISOR","ADMINISTRADOR")
 			
 		// Todas las demás URLs de la Aplicación requieren autenticación
 		.anyRequest().authenticated()
