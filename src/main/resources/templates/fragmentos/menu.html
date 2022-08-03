@@ -12,7 +12,7 @@
             <li class="nav-item" sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')">
               <a class="nav-link" th:href="@{/categoria/indexPaginado}">Categorias</a>
             </li>
-            <li class="nav-item" sec:authorize="hasAnyAuthority('SUPERVISOR','ADMINISTRADOR')">
+            <li class="nav-item" sec:authorize="hasAnyAuthority('SUPERVISOR')">
               <a class="nav-link" th:href="@{/vacante/indexPaginado}">Vacantes</a>
             </li>          
           </ul>  
